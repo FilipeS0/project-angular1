@@ -1,0 +1,19 @@
+.container__big-news {
+  border: 2px solid white;
+  margin: 0 20px;
+  width: 400px;
+  height: 500px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.big-news__title > h1 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.big-news__description > p {
+  color: gray;
+}
