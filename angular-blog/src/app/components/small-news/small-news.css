@@ -5,6 +5,7 @@
 
 .container__small-news-content {
   display: flex;
+  flex-flow: row;
 }
 
 .small-news__photo > img {

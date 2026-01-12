@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-big-news',
@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './big-news.css',
 })
 export class BigNews {
+  @Input()
+  photoCover: string = '';
 
+  @Input()
+  cardTitle: string = '';
+
+  @Input()
+  cardDescription: string = '';
 }

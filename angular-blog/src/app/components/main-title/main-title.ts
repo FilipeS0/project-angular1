@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-main-title',
   imports: [],
   templateUrl: './main-title.html',
-  styleUrl: './main-title.css',
+  styleUrls: ['./main-title.css', './main-title.responsive.css'],
 })
-export class MainTitle {
-
-}
+export class MainTitle {}
