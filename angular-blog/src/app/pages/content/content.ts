@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
+import { dataFake } from '../../data/dataFake';
 
 @Component({
   selector: 'app-content',
@@ -8,8 +9,30 @@ import { RouterLink } from '@angular/router';
   styleUrl: './content.css',
 })
 export class Content {
-  photoCover: string =
-    'https://occ-0-8407-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABQR-yWK8nGFN4es_k0fV1vtdRY63ByAzn65MkPgn9FdVZi0S8l5gMKENbYAV7G3a5SOLIjT3G233Gwf0ahb3Zag4itLxjpTnHGol.jpg?r=f97';
-  contentTitle: string = 'EXAMPLE NEWS';
-  contentDescription: string = 'Look at the Iron Man';
+  photoCover: string = '';
+  contentTitle: string = '';
+  contentDescription: string = '';
+  private id: string | null = '';
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((value) => {
+      this.id = value.get('id');
+    });
+
+    this.setValuesToComponent(this.id);
+  }
+
+  setValuesToComponent(id: string | null) {
+    const result = dataFake.filter((article) => article.id == id)[0];
+
+    this.contentTitle = result.title;
+    this.photoCover = result.photoCover;
+    this.contentDescription = result.description;
+
+    // if (!result) {
+    //   this.contentTitle = result.title;
+    // }
+  }
 }

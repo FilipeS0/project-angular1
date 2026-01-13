@@ -1,11 +1,11 @@
 <div class="container__small-news">
   <div class="container__small-news-content">
     <div class="small-news__photo">
-      <img src="{{ photoCover }}" height="200px" alt="" />
+      <img src="{{ photoCover() }}" height="200px" alt="" />
     </div>
     <div class="small-news__title">
       <h1>
-        <a href="#">{{ cardTitle }}</a>
+        <a [routerLink]="['content', Id()]">{{ cardTitle() }}</a>
       </h1>
     </div>
   </div>

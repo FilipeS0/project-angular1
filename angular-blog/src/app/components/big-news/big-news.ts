@@ -1,18 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-big-news',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './big-news.html',
   styleUrl: './big-news.css',
 })
 export class BigNews {
-  @Input()
-  photoCover: string = '';
+  readonly photoCover = input<string>('');
 
-  @Input()
-  cardTitle: string = '';
+  readonly cardTitle = input<string>('');
 
-  @Input()
-  cardDescription: string = '';
+  readonly cardDescription = input<string>('');
+
+  readonly Id = input<string>('0');
 }
